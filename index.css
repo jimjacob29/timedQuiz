@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  background-image: url("quiz.jpg");
+  font-family: "Roboto", sans-serif;
+  /* background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+}
+.title {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.score {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+  font-size: 25px;
+}
+.option {
+  height: 30px;
+  width: 180px;
+  margin: 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.question {
+  /* margin-top: 5%; */
+  font-size: 30px;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .option:hover {
+  background: rgb(85, 109, 109);
+} */
+.answers {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 35%;
+  margin-top: 3%;
+}
+.correct {
+  background-color: green;
+}
+.wrong {
+  background-color: red;
+}
+.result {
+  margin-top: 1%;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(241, 226, 7);
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  border: 5px solid yellow;
+  border-radius: 60px;
+  font-size: 35px;
+  margin-top: 3%;
+  margin-left: 48%;
+  font-weight: bolder;
+}
+.greenColor {
+  border: 5px solid greenyellow;
+  color: greenyellow;
+}
+.redColor {
+  border: 5px solid red;
+  color: red;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0px;
+  top: 0px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(244, 192, 1, 0.919502835313813) 0%,
+    rgba(5, 163, 217, 1) 100%
+  );
+  /*  */
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  height: 30%;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+.modalText {
+  font-size: 24px;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalBtn {
+  height: 30%;
+  margin-left: 30%;
+  margin-right: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: rgb(68, 56, 240);
+  color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 22px 26px 51px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 22px 26px 51px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 22px 26px 51px 0px rgba(0, 0, 0, 0.75);
+}
+@media (max-width: 600px) {
+  .question {
+    font-size: 20px;
+  }
+  .timer {
+    margin-left: 40%;
+  }
+
+  .modal-content {
+    margin: 50% auto;
+    width: 80%;
+  }
+  .modalBtn {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .question {
+    margin-top: 4%;
+    font-size: 40px;
+  }
+  .timer {
+    margin-left: 44%;
+  }
+
+  .modal-content {
+    margin: 50% auto;
+    width: 80%;
+  }
+  .modalBtn {
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 30%;
+  }
+  .option {
+    height: 60px;
+    width: 240px;
+  }
+  .answers {
+    font-size: 24px;
+    width: 50%;
+    margin-left: 22%;
+  }
+  h1 {
+    font-size: 80px;
+  }
+  .score {
+    font-size: 40px;
+  }
+  .result {
+    font-size: 40px;
+  }
+  .btn {
+    height: 70%;
+    width: 40%;
+    font-size: 40px;
+  }
+  .modalText {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 899px) {
+  .question {
+    margin-top: 4%;
+    font-size: 30px;
+  }
+  .timer {
+    margin-left: 44%;
+  }
+
+  .modal-content {
+    margin: 50% auto;
+    width: 80%;
+  }
+  .modalBtn {
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 40%;
+  }
+  .option {
+    margin-left: 22%;
+    height: 60px;
+    width: 240px;
+  }
+  .answers {
+    font-size: 30px;
+    width: 50%;
+    margin-left: 22%;
+  }
+  h1 {
+    font-size: 80px;
+  }
+  .score {
+    font-size: 40px;
+  }
+  .result {
+    font-size: 40px;
+  }
+  .btn {
+    height: 70%;
+    width: 40%;
+    font-size: 25px;
+  }
+  .modalText {
+    font-size: 40px;
+  }
+}
